@@ -1,64 +1,85 @@
-  
-  
 <!DOCTYPE html>
-<html>
-<title>Data Visualization Report</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-grey w3-content" style="max-width:1600px">
+<!-- <meta charset="utf-8"> -->
+<!-- <style> /* set the CSS */ -->
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
+<!-- .line { -->
+  <!-- fill: none; -->
+  <!-- stroke: steelblue; -->
+  <!-- stroke-width: 2px; -->
+<!-- } -->
 
-    <h4><b>Portfolio Created By</b></h4>
-    <p class="w3-text-grey">Akshay Deshpande</p>
-	<div class="w3-bar-block">
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>deshpa2@g.clemson.edu</a>
-  </div>
-	<p class="w3-text-grey">Chaitanya Mundle</p>
-	<div class="w3-bar-block">
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>cmundle@g.clemson.edu</a>
-  </div>
-	<p class="w3-text-grey">Pranav Kalbhor</p>
-	<div class="w3-bar-block">
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>pkalbhor@g.clemson.edu</a>
-  </div>
+<!-- </style> -->
+<h1>Report for NYPD</h1>
 
-  </div>
-  
-</nav>
+<!-- load the d3.js library -->    
+	
+<script src="https://d3js.org/d3.v4.min.js"></script>
 
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<body>
+<script type="text/javascript">
 
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:300px">
+d3.csv("./allegations_202007271729.csv",function(data){
+	data[0]
+	console.log(data[0])
+})
 
-  <!-- Header -->
-  <header id="portfolio">
-    <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
-    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container">
-    <h1><b>Visualizations for Misconduct in NYPD</b></h1>
-    <div class="w3-section w3-bottombar w3-padding-16">
+<!-- <!-- -->
+<!-- // set the dimensions and margins of the graph -->
+<!-- var margin = {top: 20, right: 20, bottom: 30, left: 50}, -->
+    <!-- width = 960 - margin.left - margin.right, -->
+    <!-- height = 500 - margin.top - margin.bottom; -->
 
+<!-- // parse the date / time -->
+<!-- var parseTime = d3.timeParse("%d-%b-%y"); -->
 
-    </div>
-    </div>
+<!-- // set the ranges -->
+<!-- var x = d3.scaleTime().range([0, width]); -->
+<!-- var y = d3.scaleLinear().range([height, 0]); -->
 
+<!-- // define the line -->
+<!-- var valueline = d3.line() -->
+    <!-- .x(function(d) { return x(d.date); }) -->
+    <!-- .y(function(d) { return y(d.close); }); -->
 
-  </header>
+<!-- // append the svg obgect to the body of the page -->
+<!-- // appends a 'group' element to 'svg' -->
+<!-- // moves the 'group' element to the top left margin -->
+<!-- var svg = d3.select("body").append("svg") -->
+    <!-- .attr("width", width + margin.left + margin.right) -->
+    <!-- .attr("height", height + margin.top + margin.bottom)f -->
+  <!-- .append("g") -->
+    <!-- .attr("transform", -->
+          <!-- "translate(" + margin.left + "," + margin.top + ")"); -->
 
-</script> 
+<!-- // Get the data -->
+<!-- d3.csv("data.csv", function(error, data) { -->
+  <!-- if (error) throw error; -->
+
+  <!-- // format the data -->
+  <!-- data.forEach(function(d) { -->
+      <!-- d.date = parseTime(d.date); -->
+      <!-- d.close = +d.close; -->
+  <!-- }); -->
+
+  <!-- // Scale the range of the data -->
+  <!-- x.domain(d3.extent(data, function(d) { return d.date; })); -->
+  <!-- y.domain([0, d3.max(data, function(d) { return d.close; })]); -->
+
+  <!-- // Add the valueline path. -->
+  <!-- svg.append("path") -->
+      <!-- .data([data]) -->
+      <!-- .attr("class", "line") -->
+      <!-- .attr("d", valueline); -->
+
+  <!-- // Add the X Axis -->
+  <!-- svg.append("g") -->
+      <!-- .attr("transform", "translate(0," + height + ")") -->
+      <!-- .call(d3.axisBottom(x)); -->
+
+  <!-- // Add the Y Axis -->
+  <!-- svg.append("g") -->
+      <!-- .call(d3.axisLeft(y)); -->
+
+<!-- }); -->
+</script>
 </body>
-</html>
