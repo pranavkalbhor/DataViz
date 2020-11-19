@@ -311,19 +311,19 @@ h1:nth-child(2) {
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <img src="img 1.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
+  <div class="text"></div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <img src="img 2.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
+  <div class="text"></div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <img src="img 3.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
+  <div class="text"></div>
 </div>
 
 
@@ -424,6 +424,49 @@ function showSlides() {
 
 <br><br><br><br>
 
+ <!-- PRANAV -->
+
+<div id = "viz3" class="row" style = "margin: 0 auto;">
+  <div class="leftcolumn" style = "margin: 0 auto;">
+    <div class="card">
+    <h2><u>Sankey Graph</u></h2>
+    <p>
+     In addition to this we could continue forward with a detailed mapping of the allegations against the ethnicities of different officers with respect to the complainant ethnicities. This is represented by a sankey graph wherein, the thickness of bar represents the volume of allegations made against the officer of that particular ethnicity or the allegations made by specific ethnicity of complainant.
+    </p>
+    <div class="sankeyChart"></div>
+<iframe width="100%" height="884" frameborder="0"
+src="https://observablehq.com/embed/4b198ed253d8b0a0?cell=sankeyChart"></iframe>
+  </div>
+    </div>
+      </div>
+
+<br><br><br><br>
+
+
+<div id = "viz4" class="row" style = "margin: 0 auto;">
+  <div class="leftcolumn" style = "margin: 0 auto;">
+    <div class="card">
+      <h2><u>Stacked area bar chart</u></h2>
+      <p>
+        As we saw in the above sankey graph, we see that higher complaints have been made by people of black community. Furthermore, we wanted to show what the allegations were that the people with black ethnicity reported against the white officers. We see that most reports were for Citizen Interactions.
+     </p>
+    <div class="styles"></div>
+<div class="steamgraph1"></div>
+<script type="module">
+import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@chaitanya97/untitled.js?v=3";
+(new Runtime).module(define, name => {
+  if (name === "styles") return Inspector.into(".styles")();
+  if (name === "steamgraph1") return Inspector.into(".steamgraph1")();
+});
+</script>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br><br>
+  
 <div id = "contact">
 <footer>
   <p>Authors: Akshay Deshpande, Pranav Kalbhor, Chaitanya Mundle<br><br>
