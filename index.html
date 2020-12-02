@@ -418,11 +418,14 @@ function showSlides() {
 <!--     <iframe width="100%" height="584" frameborder="0"
   src="https://observablehq.com/embed/@chaitanya97/allegations-against-active-nypd-officers?cell=map"></iframe> -->
       <div class="map"></div>
+<div class="viewof-race"></div>
 <script type="module">
 import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
 import define from "https://api.observablehq.com/@chaitanya97/allegations-against-active-nypd-officers.js?v=3";
 (new Runtime).module(define, name => {
   if (name === "map") return Inspector.into(".map")();
+  if (name === "viewof race") return Inspector.into(".viewof-race")();
+  return ["allegationsByRace","precinctComplaints"].includes(name) || null;
 });
 </script>
    </div>
