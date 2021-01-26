@@ -10,8 +10,7 @@ We represent three types of visualizations:
 2) Geographical Map.
 3) Sankey Graph.
 
-
-
+This Project was developed by a team of three individuals: Pranav Kalbhor, Akshay Deshpande, Chaitanya Mundle.
 
 
 
